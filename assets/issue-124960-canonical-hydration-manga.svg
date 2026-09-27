@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0d0e10"/><stop offset="1" stop-color="#28221d"/>
+  </linearGradient>
+  <pattern id="screen" width="8" height="8" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.2" fill="#d8d2c6" opacity=".16"/>
+  </pattern>
+  <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity=".45"/></filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 z" fill="#d85b32"/>
+  </marker>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#screen)"/>
+
+<!-- moon / desert -->
+<circle cx="1260" cy="128" r="92" fill="#eee6d4" opacity=".96"/>
+<path d="M0 315 Q180 255 360 314 T720 314 T1080 314 T1600 296 V420 H0Z" fill="#b9b1a2" opacity=".45"/>
+<path d="M0 350 Q170 300 360 352 T730 350 T1120 348 T1600 338 V430 H0Z" fill="#e3ddd0" opacity=".2"/>
+
+<!-- title -->
+<text x="55" y="82" font-family="Georgia,serif" font-size="30" fill="#d85b32" font-weight="700">ISSUE #124960</text>
+<text x="55" y="142" font-family="Arial Black,Arial,sans-serif" font-size="54" fill="#f3eee3">TODO STATE LOST ACROSS TURNS</text>
+<text x="58" y="184" font-family="Arial,sans-serif" font-size="24" fill="#d9d1c3">The bug is not “11 items” — history hydration recognizes the legacy name, not the current tool.</text>
+
+<!-- fox courier illustration -->
+<g transform="translate(1040,120)" filter="url(#shadow)">
+  <path d="M120 72 L165 16 L178 86 Q220 110 228 165 Q235 240 188 296 Q150 340 92 320 Q35 300 20 236 Q4 168 52 116 Q78 88 120 72Z" fill="#f2eee5" stroke="#141414" stroke-width="7"/>
+  <path d="M92 77 L65 12 L127 63 Z" fill="#f2eee5" stroke="#141414" stroke-width="7"/>
+  <path d="M140 79 L190 15 L171 92 Z" fill="#f2eee5" stroke="#141414" stroke-width="7"/>
+  <path d="M67 132 Q110 105 169 128" fill="none" stroke="#141414" stroke-width="6"/>
+  <path d="M78 158 Q96 146 112 160 M145 160 Q163 146 178 159" fill="none" stroke="#141414" stroke-width="5"/>
+  <circle cx="96" cy="160" r="5" fill="#141414"/><circle cx="160" cy="160" r="5" fill="#141414"/>
+  <path d="M123 182 L136 185 L129 195 Z" fill="#141414"/>
+  <path d="M65 220 Q126 264 194 219" fill="#d85b32" stroke="#141414" stroke-width="6"/>
+  <path d="M30 265 Q-18 300 12 344 Q48 392 124 333" fill="none" stroke="#f2eee5" stroke-width="28" stroke-linecap="round"/>
+  <rect x="156" y="216" width="78" height="92" rx="8" fill="#3b2c24" stroke="#141414" stroke-width="5"/>
+  <g fill="#f1e7d3" stroke="#d85b32" stroke-width="3">
+    <rect x="166" y="230" width="58" height="18"/><rect x="166" y="257" width="58" height="18"/><rect x="166" y="284" width="58" height="18"/>
+  </g>
+</g>
+
+<!-- four panels -->
+<g filter="url(#shadow)">
+  <rect x="38" y="420" width="360" height="420" rx="18" fill="#efe8d9" stroke="#171717" stroke-width="5"/>
+  <rect x="426" y="420" width="360" height="420" rx="18" fill="#efe8d9" stroke="#171717" stroke-width="5"/>
+  <rect x="814" y="420" width="360" height="420" rx="18" fill="#efe8d9" stroke="#171717" stroke-width="5"/>
+  <rect x="1202" y="420" width="360" height="420" rx="18" fill="#efe8d9" stroke="#171717" stroke-width="5"/>
+</g>
+
+<!-- headers -->
+<g font-family="Arial Black,Arial,sans-serif" fill="#171717">
+  <circle cx="83" cy="465" r="28" fill="#d85b32"/><text x="83" y="475" text-anchor="middle" font-size="26" fill="#fff">1</text><text x="125" y="475" font-size="28">PROBLEM</text>
+  <circle cx="471" cy="465" r="28" fill="#d85b32"/><text x="471" y="475" text-anchor="middle" font-size="26" fill="#fff">2</text><text x="513" y="475" font-size="28">ROOT CAUSE</text>
+  <circle cx="859" cy="465" r="28" fill="#d85b32"/><text x="859" y="475" text-anchor="middle" font-size="26" fill="#fff">3</text><text x="901" y="475" font-size="28">FIX</text>
+  <circle cx="1247" cy="465" r="28" fill="#d85b32"/><text x="1247" y="475" text-anchor="middle" font-size="26" fill="#fff">4</text><text x="1289" y="475" font-size="28">RESULT</text>
+</g>
+
+<!-- panel 1 -->
+<g transform="translate(60,515)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#222">The current tool writes the list correctly.</text>
+  <rect y="32" width="316" height="116" rx="12" fill="#17191c"/>
+  <text x="16" y="62" font-family="monospace" font-size="16" fill="#f0e7d6">assistant tool_call</text>
+  <text x="16" y="94" font-family="monospace" font-size="20" fill="#f2ae5d">name = "todo_list"</text>
+  <text x="16" y="124" font-family="monospace" font-size="16" fill="#a9d8b7">11 todos · revision 7</text>
+  <path d="M158 158V205" stroke="#d85b32" stroke-width="6" marker-end="url(#arrow)"/>
+  <rect y="220" width="316" height="118" rx="12" fill="#17191c"/>
+  <text x="16" y="253" font-family="monospace" font-size="15" fill="#f0e7d6">next turn → fresh AIAgent</text>
+  <text x="16" y="287" font-family="monospace" font-size="18" fill="#e06a55">todos: []</text>
+  <text x="16" y="316" font-family="monospace" font-size="18" fill="#e06a55">revision: 0</text>
+</g>
+
+<!-- panel 2 -->
+<g transform="translate(448,515)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#222">Hydration checks the wrong spelling.</text>
+  <rect y="32" width="316" height="150" rx="12" fill="#17191c"/>
+  <text x="16" y="64" font-family="monospace" font-size="15" fill="#f0e7d6">run_agent.py</text>
+  <text x="16" y="94" font-family="monospace" font-size="16" fill="#f2ae5d">if tool_name == "todo":</text>
+  <text x="16" y="123" font-family="monospace" font-size="16" fill="#8dd09e">    accept ✓</text>
+  <text x="16" y="152" font-family="monospace" font-size="16" fill="#e06a55">"todo_list" → reject ✕</text>
+  <g transform="translate(5,215)">
+    <path d="M20 0 L60 70 H-20 Z" fill="#d85b32"/>
+    <text x="20" y="52" text-anchor="middle" font-size="36" fill="#fff" font-weight="700">!</text>
+    <text x="82" y="25" font-size="18" font-weight="700" fill="#2a2926">Same call ID, valid result,</text>
+    <text x="82" y="52" font-size="18" fill="#2a2926">but the name check fails.</text>
+  </g>
+</g>
+
+<!-- panel 3 -->
+<g transform="translate(836,515)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#222">Reuse the dispatcher's canonical-name owner.</text>
+  <rect y="32" width="316" height="95" rx="12" fill="#17191c"/>
+  <text x="16" y="62" font-family="monospace" font-size="14" fill="#f0e7d6">agent.tool_executor</text>
+  <text x="16" y="92" font-family="monospace" font-size="17" fill="#f2ae5d">_canonical_tool_name(...)</text>
+  <g transform="translate(12,155)">
+    <rect x="0" y="0" width="106" height="55" rx="10" fill="#f4f0e8" stroke="#171717" stroke-width="3"/>
+    <text x="53" y="34" text-anchor="middle" font-family="monospace" font-size="15">todo</text>
+    <path d="M116 27H182" stroke="#d85b32" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="192" y="0" width="105" height="55" rx="10" fill="#f4f0e8" stroke="#171717" stroke-width="3"/>
+    <text x="244" y="34" text-anchor="middle" font-family="monospace" font-size="15">todo_list</text>
+  </g>
+  <g transform="translate(12,235)">
+    <rect x="0" y="0" width="106" height="55" rx="10" fill="#f4f0e8" stroke="#171717" stroke-width="3"/>
+    <text x="53" y="34" text-anchor="middle" font-family="monospace" font-size="13">todo_list</text>
+    <path d="M116 27H182" stroke="#d85b32" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="192" y="0" width="105" height="55" rx="10" fill="#f4f0e8" stroke="#171717" stroke-width="3"/>
+    <text x="244" y="34" text-anchor="middle" font-family="monospace" font-size="13">todo_list</text>
+  </g>
+  <text x="12" y="335" font-size="17" fill="#2a2926">One alias table. One canonical name.</text>
+</g>
+
+<!-- panel 4 -->
+<g transform="translate(1224,515)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#222">History and dispatch now agree.</text>
+  <g transform="translate(0,38)">
+    <circle cx="18" cy="18" r="15" fill="#4b8a62"/><text x="18" y="25" text-anchor="middle" font-size="21" fill="#fff">✓</text>
+    <text x="48" y="23" font-size="17" fill="#222">current todo_list hydrates</text>
+    <circle cx="18" cy="74" r="15" fill="#4b8a62"/><text x="18" y="81" text-anchor="middle" font-size="21" fill="#fff">✓</text>
+    <text x="48" y="79" font-size="17" fill="#222">legacy todo hydrates</text>
+    <circle cx="18" cy="130" r="15" fill="#4b8a62"/><text x="18" y="137" text-anchor="middle" font-size="21" fill="#fff">✓</text>
+    <text x="48" y="135" font-size="17" fill="#222">exact call_id still required</text>
+    <circle cx="18" cy="186" r="15" fill="#4b8a62"/><text x="18" y="193" text-anchor="middle" font-size="21" fill="#fff">✓</text>
+    <text x="48" y="191" font-size="17" fill="#222">unrelated tools rejected</text>
+  </g>
+  <rect y="260" width="316" height="90" rx="12" fill="#17191c"/>
+  <text x="16" y="293" font-family="monospace" font-size="16" fill="#a9d8b7">same 11 todos</text>
+  <text x="16" y="322" font-family="monospace" font-size="16" fill="#a9d8b7">same revision 7</text>
+</g>
+
+<!-- arrows between panels -->
+<path d="M398 625H423" stroke="#d85b32" stroke-width="7" marker-end="url(#arrow)"/>
+<path d="M786 625H811" stroke="#d85b32" stroke-width="7" marker-end="url(#arrow)"/>
+<path d="M1174 625H1199" stroke="#d85b32" stroke-width="7" marker-end="url(#arrow)"/>
+
+<text x="800" y="875" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#e9dfcf">Same courier, same destination: canonicalize before deciding whether history belongs to Todo.</text>
+</svg>
