@@ -1,74 +1,129 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Hermes Python PATH — fix the owner, not the symptom</title>
+<desc id="desc">Illustrated underwater-library infographic for issue 125040 showing global PM activation shadowing the dependency venv, the _store_path_dirs root cause, the narrow fix that excludes Python only from ambient activation, and the resulting terminal invariants.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#050912"/><stop offset="1" stop-color="#0a101e"/></linearGradient>
-  <radialGradient id="glow"><stop stop-color="#186784" stop-opacity=".22"/><stop offset="1" stop-color="#07101d" stop-opacity="0"/></radialGradient>
-  <filter id="soft"><feGaussianBlur stdDeviation="20"/></filter>
+  <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#072b45"/><stop offset=".46" stop-color="#071a2c"/><stop offset="1" stop-color="#06101b"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c3852" stop-opacity=".86"/><stop offset="1" stop-color="#081624" stop-opacity=".94"/></linearGradient>
+  <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#55331e"/><stop offset="1" stop-color="#26170f"/></linearGradient>
+  <radialGradient id="cyanGlow"><stop stop-color="#67f4e6" stop-opacity=".85"/><stop offset=".35" stop-color="#2bc8c0" stop-opacity=".26"/><stop offset="1" stop-color="#2bc8c0" stop-opacity="0"/></radialGradient>
+  <radialGradient id="amberGlow"><stop stop-color="#ffcb70" stop-opacity=".9"/><stop offset="1" stop-color="#ff9b42" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="smallGlow"><feGaussianBlur stdDeviation="5"/></filter>
 </defs>
-<rect width="1600" height="900" fill="url(#bg)"/>
-<circle cx="1190" cy="500" r="390" fill="url(#glow)"/>
-<g opacity=".14" stroke="#7fb8d0" stroke-width="2">
-  <path d="M1268 735V333l137-93 133 91v404z"/><path d="M1405 240v495"/>
+<rect width="1600" height="900" fill="url(#ocean)"/>
+<!-- underwater ceiling -->
+<path d="M0 0h1600v135c-170 25-315-16-476 4-184 23-304 4-493-1C410 133 220 171 0 134z" fill="#0b5470" opacity=".42"/>
+<path d="M0 58c176-36 307 24 469-5 176-31 323 27 504-4 214-36 390 25 627-8" fill="none" stroke="#67e6ec" stroke-opacity=".35" stroke-width="6"/>
+<path d="M0 92c193-30 334 24 493-3 202-34 367 22 523-1 190-29 346 17 584-13" fill="none" stroke="#79f2ef" stroke-opacity=".18" stroke-width="3"/>
+<!-- library arches -->
+<g fill="none" stroke="#244c5e" stroke-width="18" opacity=".62">
+  <path d="M24 858V250c0-125 96-184 184-184s184 59 184 184v608"/>
+  <path d="M404 858V250c0-125 96-184 184-184s184 59 184 184v608"/>
+  <path d="M784 858V250c0-125 96-184 184-184s184 59 184 184v608"/>
+  <path d="M1164 858V250c0-125 96-184 184-184s184 59 184 184v608"/>
 </g>
-<circle cx="1445" cy="158" r="67" fill="#dbe7f4" opacity=".92"/><circle cx="1480" cy="148" r="57" fill="#0a101e"/>
-<g opacity=".62" fill="#172332" stroke="#b96851" stroke-width="5">
-  <ellipse cx="1410" cy="448" rx="44" ry="48"/><ellipse cx="1390" cy="365" rx="14" ry="43"/><ellipse cx="1430" cy="360" rx="14" ry="46"/>
-  <ellipse cx="1410" cy="545" rx="53" ry="77"/><ellipse cx="1490" cy="580" rx="38" ry="35"/><path d="M1475 566l80-55"/>
+<!-- shelves -->
+<g fill="#173143" stroke="#37677c" stroke-width="2" opacity=".8">
+  <rect x="20" y="630" width="1560" height="16" rx="8"/><rect x="20" y="768" width="1560" height="16" rx="8"/>
 </g>
-<circle cx="1428" cy="435" r="5" fill="#ff4f63"/>
-<g font-family="DejaVu Sans,Arial,sans-serif">
-  <text x="68" y="72" fill="#6abdfd" font-size="22" font-weight="700" letter-spacing="1">HERMES • PYTHON PATH</text>
-  <text x="68" y="126" fill="#f2f7ff" font-size="46" font-weight="700">Dependency venv must own python3</text>
-  <text x="68" y="166" fill="#a6b8d0" font-size="21">Issue #125040 • root-cause fix at the PM package contract</text>
+<g opacity=".62">
+  <rect x="42" y="655" width="31" height="88" rx="3" fill="#c06953"/><rect x="78" y="672" width="24" height="71" rx="3" fill="#6fa5a8"/>
+  <rect x="109" y="661" width="29" height="82" rx="3" fill="#c6a260"/><rect x="145" y="681" width="20" height="62" rx="3" fill="#7c6e9e"/>
+  <rect x="1436" y="654" width="29" height="89" rx="3" fill="#c6a260"/><rect x="1472" y="672" width="26" height="71" rx="3" fill="#658f9d"/>
+  <rect x="1505" y="661" width="31" height="82" rx="3" fill="#b65e52"/>
+</g>
+<!-- heading -->
+<g font-family="Inter,DejaVu Sans,Arial,sans-serif">
+  <text x="70" y="78" fill="#78eaf0" font-size="20" font-weight="800" letter-spacing="3">HERMES • ISSUE #125040</text>
+  <text x="70" y="132" fill="#f5fbff" font-size="48" font-weight="800">Python PATH: fix the owner, not the symptom</text>
+  <text x="70" y="169" fill="#b7d4df" font-size="20">Ambient PM activation must not shadow the committed dependency environment.</text>
+</g>
+<!-- panels -->
+<g font-family="Inter,DejaVu Sans,Arial,sans-serif">
+  <rect x="46" y="205" width="350" height="500" rx="28" fill="url(#glass)" stroke="#ff725e" stroke-width="2"/>
+  <rect x="424" y="205" width="350" height="500" rx="28" fill="url(#glass)" stroke="#f2b45a" stroke-width="2"/>
+  <rect x="802" y="205" width="350" height="500" rx="28" fill="url(#glass)" stroke="#5ee5b8" stroke-width="2"/>
+  <rect x="1180" y="205" width="374" height="500" rx="28" fill="url(#glass)" stroke="#53cfe8" stroke-width="2"/>
+  <text x="78" y="254" fill="#ff8c78" font-size="23" font-weight="800">1  BEFORE</text>
+  <text x="456" y="254" fill="#f2bd67" font-size="23" font-weight="800">2  ROOT CAUSE</text>
+  <text x="834" y="254" fill="#6af0c3" font-size="23" font-weight="800">3  FIX</text>
+  <text x="1212" y="254" fill="#69dbef" font-size="23" font-weight="800">4  INVARIANT</text>
 
+  <!-- before -->
+  <text x="78" y="294" fill="#dceaf0" font-size="18">Dependency activation is correct…</text>
+  <rect x="80" y="320" width="260" height="48" rx="12" fill="#123d47" stroke="#54d7ca"/>
+  <text x="102" y="351" fill="#8cf0dc" font-size="19" font-family="monospace">venv/bin/python3</text>
+  <path d="M210 375v44" stroke="#7bded0" stroke-width="3"/><path d="M202 410l8 13 8-13z" fill="#7bded0"/>
+  <text x="78" y="458" fill="#dceaf0" font-size="18">…then global PM activation prepends:</text>
+  <rect x="80" y="481" width="260" height="48" rx="12" fill="#451f1d" stroke="#ff725e"/>
+  <text x="98" y="512" fill="#ffad9d" font-size="18" font-family="monospace">store/python/bin</text>
+  <text x="78" y="562" fill="#ffb5a7" font-size="17" font-weight="700">$ which python3 → store Python</text>
+  <text x="78" y="595" fill="#a8c1cb" font-size="16">Bare scripts lose venv dependencies.</text>
+
+  <!-- roots / robot gardener -->
+  <rect x="455" y="306" width="286" height="62" rx="14" fill="#2d281a" stroke="#f2b45a"/>
+  <text x="484" y="344" fill="#ffe0a5" font-size="20" font-family="monospace">_store_path_dirs()</text>
+  <path d="M598 370v60M598 430l-57 44M598 430l0 44M598 430l57 44" fill="none" stroke="#f3c170" stroke-width="3"/>
   <g>
-    <rect x="60" y="225" width="440" height="495" rx="24" fill="#0a121f" fill-opacity=".92" stroke="#ff4e5b" stroke-width="2"/>
-    <text x="90" y="278" fill="#ff5e69" font-size="25" font-weight="700">1  PROBLEM</text>
-    <rect x="92" y="326" width="330" height="48" rx="14" fill="#45131e" stroke="#ff4e5b" stroke-width="2"/>
-    <text x="111" y="357" fill="#f4e9ed" font-size="20" font-weight="700">PM store Python</text>
-    <rect x="92" y="391" width="330" height="48" rx="14" fill="#102f41" stroke="#54abd0" stroke-width="2"/>
-    <text x="111" y="422" fill="#e9f2f8" font-size="20" font-weight="700">dependency venv</text>
-    <text x="92" y="477" fill="#b9c5d8" font-size="18">store-first activation pushes the</text>
-    <text x="92" y="506" fill="#b9c5d8" font-size="18">bare interpreter ahead of the venv.</text>
-    <path d="M256 526v50" stroke="#ff5e69" stroke-width="4"/><path d="M246 566l10 14 10-14z" fill="#ff5e69"/>
-    <rect x="92" y="592" width="328" height="68" rx="16" fill="#3d101b" stroke="#ff4e5b" stroke-width="2"/>
-    <text x="118" y="620" fill="#ffd0d4" font-size="18" font-weight="700">python3 → wrong interpreter</text>
-    <text x="118" y="649" fill="#ff7f8b" font-size="18" font-family="monospace">import yaml  ×</text>
+    <rect x="474" y="474" width="78" height="74" rx="10" fill="#52271f" stroke="#ff7d63"/><text x="486" y="518" fill="#ffd2c9" font-size="15">python</text>
+    <rect x="559" y="474" width="78" height="74" rx="10" fill="#174033" stroke="#67e2b5"/><text x="578" y="518" fill="#b9f7df" font-size="15">node</text>
+    <rect x="644" y="474" width="78" height="74" rx="10" fill="#174033" stroke="#67e2b5"/><text x="667" y="518" fill="#b9f7df" font-size="15">npm</text>
+  </g>
+  <text x="455" y="585" fill="#e7d4ab" font-size="17" font-weight="700">Global store-first publication</text>
+  <text x="455" y="614" fill="#b7cbd4" font-size="16">treats the pinned interpreter like</text>
+  <text x="455" y="640" fill="#b7cbd4" font-size="16">an ambient terminal tool.</text>
+  <!-- tiny robot -->
+  <g transform="translate(690 620)">
+    <ellipse cx="0" cy="0" rx="34" ry="28" fill="#d6edf1" stroke="#5ec5cf" stroke-width="3"/>
+    <rect x="-28" y="25" width="56" height="48" rx="22" fill="#adc8ce" stroke="#5ec5cf" stroke-width="3"/>
+    <rect x="-20" y="-9" width="40" height="20" rx="10" fill="#102939"/>
+    <circle cx="-8" cy="1" r="4" fill="#ffc55d"/><circle cx="8" cy="1" r="4" fill="#ffc55d"/>
+    <path d="M-8 70c-11 11-18 21-20 30M8 70c11 11 18 21 20 30" stroke="#adc8ce" stroke-width="8" stroke-linecap="round"/>
   </g>
 
+  <!-- fix -->
+  <text x="834" y="296" fill="#dcecf0" font-size="17">Change only the ambient owner:</text>
+  <rect x="832" y="322" width="288" height="70" rx="14" fill="#102c29" stroke="#5ee5b8"/>
+  <text x="857" y="352" fill="#baf9df" font-size="16" font-family="monospace">if name == "python":</text>
+  <text x="892" y="378" fill="#72efc2" font-size="16" font-family="monospace">continue</text>
+  <path d="M976 399v46" stroke="#6debc1" stroke-width="3"/><path d="M968 436l8 13 8-13z" fill="#6debc1"/>
+  <rect x="834" y="460" width="284" height="64" rx="14" fill="#0e3540" stroke="#53cfe8"/>
+  <text x="854" y="487" fill="#bdebf2" font-size="16">ambient activation</text>
+  <text x="854" y="512" fill="#71e7d4" font-size="17" font-weight="800">Python excluded</text>
+  <rect x="834" y="546" width="284" height="64" rx="14" fill="#183b2f" stroke="#5ee5b8"/>
+  <text x="854" y="573" fill="#c8f4df" font-size="16" font-family="monospace">env_for("python")</text>
+  <text x="854" y="598" fill="#71e7b0" font-size="17" font-weight="800">still available</text>
+  <text x="834" y="646" fill="#a8c7cf" font-size="15">Node / npm / ffmpeg keep store-first.</text>
+
+  <!-- invariant -->
   <g>
-    <rect x="535" y="225" width="440" height="495" rx="24" fill="#0a121f" fill-opacity=".92" stroke="#f0aa48" stroke-width="2"/>
-    <text x="565" y="278" fill="#f5b650" font-size="25" font-weight="700">2  ROOT CAUSE</text>
-    <rect x="578" y="331" width="352" height="145" rx="18" fill="#141927" stroke="#f0aa48" stroke-width="2"/>
-    <text x="605" y="374" fill="#f7e1b8" font-size="22" font-family="monospace">class Python</text>
-    <text x="605" y="411" fill="#d2dbe8" font-size="18" font-family="monospace">optional = True</text>
-    <text x="605" y="444" fill="#ffb05c" font-size="18" font-family="monospace">on_path = True  ← inherited</text>
-    <text x="578" y="531" fill="#b2bfd2" font-size="18">But its declared role is:</text>
-    <text x="578" y="567" fill="#f4dfb0" font-size="20" font-weight="700">launcher + PM-managed uv interpreter</text>
-    <text x="578" y="607" fill="#b2bfd2" font-size="18">not a user-facing terminal tool.</text>
+    <circle cx="1228" cy="324" r="18" fill="#183f38" stroke="#62e8b5"/><path d="M1219 324l7 7 12-15" fill="none" stroke="#81f0c1" stroke-width="4"/>
+    <text x="1261" y="321" fill="#e3f5f8" font-size="17" font-weight="700">Foreground terminal</text>
+    <text x="1261" y="348" fill="#82ecd0" font-size="16">venv owns bare python3</text>
+    <circle cx="1228" cy="408" r="18" fill="#183f38" stroke="#62e8b5"/><path d="M1219 408l7 7 12-15" fill="none" stroke="#81f0c1" stroke-width="4"/>
+    <text x="1261" y="405" fill="#e3f5f8" font-size="17" font-weight="700">Background process</text>
+    <text x="1261" y="432" fill="#82ecd0" font-size="16">inherits corrected PATH</text>
+    <circle cx="1228" cy="492" r="18" fill="#183f38" stroke="#62e8b5"/><path d="M1219 492l7 7 12-15" fill="none" stroke="#81f0c1" stroke-width="4"/>
+    <text x="1261" y="489" fill="#e3f5f8" font-size="17" font-weight="700">PTY child</text>
+    <text x="1261" y="516" fill="#82ecd0" font-size="16">inherits corrected PATH</text>
+    <circle cx="1228" cy="576" r="18" fill="#183f38" stroke="#62e8b5"/><path d="M1219 576l7 7 12-15" fill="none" stroke="#81f0c1" stroke-width="4"/>
+    <text x="1261" y="573" fill="#e3f5f8" font-size="17" font-weight="700">Explicit build env</text>
+    <text x="1261" y="600" fill="#82ecd0" font-size="16">PM Python remains reachable</text>
   </g>
-
-  <g>
-    <rect x="1010" y="225" width="440" height="495" rx="24" fill="#0a121f" fill-opacity=".92" stroke="#37d2b0" stroke-width="2"/>
-    <text x="1040" y="278" fill="#48e0bc" font-size="25" font-weight="700">3  FIX</text>
-    <rect x="1052" y="331" width="326" height="74" rx="16" fill="#0b2826" stroke="#37d2b0" stroke-width="2"/>
-    <text x="1078" y="377" fill="#79f4d4" font-size="24" font-family="monospace">on_path = False</text>
-    <text x="1052" y="472" fill="#e1eaf4" font-size="18" font-weight="700">PATH after activation</text>
-    <rect x="1052" y="493" width="310" height="48" rx="14" fill="#0b3033" stroke="#37d2b0" stroke-width="2"/>
-    <text x="1071" y="524" fill="#e9f7f4" font-size="20" font-weight="700">dependency venv</text>
-    <text x="1070" y="574" fill="#83eed1" font-size="18" font-family="monospace">python3  ✓  PyYAML visible</text>
-    <text x="1052" y="621" fill="#b7c6d8" font-size="17">Managed Node / npm / ffmpeg stay on PATH.</text>
-    <text x="1052" y="651" fill="#b7c6d8" font-size="17">Launcher + uv still use Python by absolute path.</text>
-  </g>
-
-  <path d="M510 465h18" stroke="#70aac8" stroke-width="4"/><path d="M526 456l14 9-14 9z" fill="#70aac8"/>
-  <path d="M985 465h18" stroke="#70aac8" stroke-width="4"/><path d="M1001 456l14 9-14 9z" fill="#70aac8"/>
-
-  <rect x="60" y="760" width="1390" height="80" rx="20" fill="#0b111c" stroke="#4d6884" stroke-opacity=".65"/>
-  <text x="90" y="802" fill="#6ec1f9" font-size="18" font-weight="700">PROOF</text>
-  <text x="205" y="802" fill="#e0e8f3" font-size="18" font-weight="700">1 commit</text>
-  <circle cx="335" cy="799" r="4" fill="#48d6b4"/><text x="355" y="802" fill="#e0e8f3" font-size="18" font-weight="700">2 files</text>
-  <circle cx="465" cy="799" r="4" fill="#48d6b4"/><text x="485" y="802" fill="#e0e8f3" font-size="18">legacy PATH fact regression</text>
-  <circle cx="765" cy="799" r="4" fill="#48d6b4"/><text x="785" y="802" fill="#e0e8f3" font-size="18">Node/npm unchanged</text>
-  <text x="90" y="831" fill="#8fa2ba" font-size="16">Canonical owner: pm/packages.py • terminal workaround unnecessary</text>
+  <text x="1212" y="649" fill="#9ebbc6" font-size="15">One owner fix covers every inheriting child.</text>
 </g>
+
+<!-- garden / roots result strip -->
+<rect x="48" y="742" width="1504" height="112" rx="26" fill="#071925" stroke="#37687b" stroke-width="2"/>
+<ellipse cx="794" cy="814" rx="560" ry="80" fill="url(#cyanGlow)" opacity=".28"/>
+<g font-family="Inter,DejaVu Sans,Arial,sans-serif">
+  <text x="82" y="785" fill="#6be6ed" font-size="18" font-weight="800" letter-spacing="2">PROOF / SCOPE</text>
+  <text x="82" y="822" fill="#e0edf2" font-size="18"><tspan font-weight="800">1 commit</tspan>  •  <tspan font-weight="800">2 files</tspan>  •  ambient Python absent  •  explicit Python preserved</text>
+  <text x="82" y="848" fill="#8fb0be" font-size="15">Canonical boundary: pm/install.py::_store_path_dirs() — no terminal-specific reorder required.</text>
+</g>
+<!-- plants and bubbles -->
+<g stroke="#68e5be" stroke-width="4" fill="none" opacity=".75">
+  <path d="M1030 853c4-38 4-58 0-92M1030 802c-24-11-36-25-39-42M1030 788c23-12 36-28 41-48"/>
+</g>
+<g fill="#62d8ea" opacity=".35"><circle cx="1490" cy="120" r="7"/><circle cx="1518" cy="88" r="4"/><circle cx="126" cy="190" r="6"/><circle cx="95" cy="158" r="3"/></g>
 </svg>
