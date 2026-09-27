@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Hermes PM runtime lock ownership — issue 125071</title>
+<desc id="desc">Illustrated floating-sky-city infographic showing a valid PM lock rejected by user mirror configuration, runtime frozen consumption, and CI ownership of lock freshness for root and PM projects.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff9068"/><stop offset=".35" stop-color="#7c6bc4"/><stop offset=".7" stop-color="#17324d"/><stop offset="1" stop-color="#07131f"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10243a" stop-opacity=".97"/><stop offset="1" stop-color="#071522" stop-opacity=".97"/></linearGradient>
+  <radialGradient id="sun"><stop stop-color="#ffe89a" stop-opacity=".95"/><stop offset=".5" stop-color="#ffb65d" stop-opacity=".35"/><stop offset="1" stop-color="#ff9855" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="1380" cy="150" r="170" fill="url(#sun)"/>
+<!-- floating city silhouettes -->
+<g fill="#101c2b" stroke="#2b4258" stroke-width="3" opacity=".96">
+  <path d="M1040 250l55-80 52 80 0 84h-107z"/><path d="M1100 170v-66h16v66"/>
+  <path d="M1220 220l45-67 43 67v100h-88z"/><path d="M1260 153V95h13v58"/>
+  <path d="M1370 246l55-92 58 92v86h-113z"/><path d="M1422 154V79h13v75"/>
+  <path d="M1505 276l35-54 35 54v71h-70z"/>
+</g>
+<g stroke="#f6c06f" stroke-width="5" fill="none" opacity=".7">
+  <path d="M1090 300c90-35 170-30 270 5"/><path d="M1270 330c90-26 185-20 305 15"/>
+</g>
+<!-- clouds -->
+<g fill="#d9e2f2" opacity=".13">
+  <ellipse cx="1110" cy="355" rx="190" ry="45"/><ellipse cx="1400" cy="385" rx="230" ry="55"/>
+  <ellipse cx="230" cy="190" rx="190" ry="55"/><ellipse cx="525" cy="165" rx="160" ry="42"/>
+</g>
+<!-- rabbit musician anchor -->
+<g transform="translate(560 38)">
+  <ellipse cx="92" cy="97" rx="68" ry="58" fill="#f4eadb" stroke="#d3bfa7" stroke-width="4"/>
+  <ellipse cx="58" cy="20" rx="25" ry="72" transform="rotate(-16 58 20)" fill="#f4eadb" stroke="#d3bfa7" stroke-width="4"/>
+  <ellipse cx="130" cy="16" rx="25" ry="72" transform="rotate(13 130 16)" fill="#f4eadb" stroke="#d3bfa7" stroke-width="4"/>
+  <path d="M63 124c31 18 60 17 90 0l18 89H45z" fill="#243957" stroke="#152339" stroke-width="4"/>
+  <path d="M57 124c29 12 64 11 94-1l35 31-37 27-87-14-38-30z" fill="#a5333f"/>
+  <circle cx="74" cy="94" r="4" fill="#24313b"/><circle cx="110" cy="94" r="4" fill="#24313b"/>
+  <path d="M89 105c6 4 10 4 16 0" fill="none" stroke="#9b765d" stroke-width="3"/>
+  <ellipse cx="176" cy="167" rx="58" ry="31" transform="rotate(-18 176 167)" fill="#aa6833" stroke="#754623" stroke-width="5"/>
+  <path d="M137 178l-52 27" stroke="#7e4c28" stroke-width="8"/><path d="M196 148l79-40" stroke="#7e4c28" stroke-width="11"/>
+  <g fill="#ffd470"><circle cx="246" cy="80" r="5"/><circle cx="276" cy="62" r="5"/><circle cx="306" cy="92" r="5"/></g>
+  <path d="M235 87q22-15 42-10M267 69q23-10 43 5" fill="none" stroke="#ffd470" stroke-width="3"/>
+</g>
+
+<g font-family="Inter,DejaVu Sans,Arial,sans-serif">
+  <text x="66" y="72" fill="#ffe5aa" font-size="20" font-weight="800" letter-spacing="3">HERMES • ISSUE #125071</text>
+  <text x="66" y="126" fill="#fff8e9" font-size="48" font-weight="800">PM runtime lock: move freshness to the right owner</text>
+  <text x="66" y="164" fill="#e7d8d2" font-size="20">A user mirror must not decide whether a repository lock is fresh.</text>
+
+  <!-- panels -->
+  <rect x="45" y="300" width="355" height="440" rx="26" fill="url(#panel)" stroke="#ff715f" stroke-width="2"/>
+  <rect x="425" y="300" width="355" height="440" rx="26" fill="url(#panel)" stroke="#54b7df" stroke-width="2"/>
+  <rect x="805" y="300" width="355" height="440" rx="26" fill="url(#panel)" stroke="#63d9aa" stroke-width="2"/>
+  <rect x="1185" y="300" width="370" height="440" rx="26" fill="url(#panel)" stroke="#f4bf5a" stroke-width="2"/>
+
+  <text x="76" y="348" fill="#ff8b78" font-size="23" font-weight="800">1  PROBLEM</text>
+  <text x="456" y="348" fill="#6bcaf0" font-size="23" font-weight="800">2  ROOT CAUSE</text>
+  <text x="836" y="348" fill="#79e7b9" font-size="23" font-weight="800">3  RUNTIME FIX</text>
+  <text x="1216" y="348" fill="#ffd477" font-size="23" font-weight="800">4  CI OWNER</text>
+
+  <!-- problem -->
+  <text x="76" y="389" fill="#eef4f7" font-size="18">User has a pip/uv mirror.</text>
+  <rect x="76" y="416" width="293" height="55" rx="14" fill="#441d22" stroke="#ff715f"/>
+  <text x="98" y="450" fill="#ffb0a2" font-size="18" font-family="monospace">uv sync --locked</text>
+  <path d="M222 480v42" stroke="#ff8875" stroke-width="3"/><path d="M214 514l8 13 8-13z" fill="#ff8875"/>
+  <rect x="76" y="535" width="293" height="86" rx="14" fill="#32171c" stroke="#ff715f"/>
+  <text x="96" y="566" fill="#ffc0b6" font-size="16">valid committed pm/uv.lock</text>
+  <text x="96" y="592" fill="#ff7665" font-size="16" font-weight="700">reported as “needs update”</text>
+  <text x="76" y="660" fill="#aabfca" font-size="15">Desktop/update loops because PM</text>
+  <text x="76" y="684" fill="#aabfca" font-size="15">bootstrap fails before install completes.</text>
+
+  <!-- root -->
+  <text x="456" y="391" fill="#e9f1f6" font-size="17">The lock records PyPI registry identity.</text>
+  <rect x="458" y="420" width="287" height="60" rx="14" fill="#112d45" stroke="#54b7df"/>
+  <text x="478" y="447" fill="#a9e2f7" font-size="15">repository invariant</text>
+  <text x="478" y="470" fill="#d6f1fb" font-size="17" font-weight="800">pyproject ↔ uv.lock</text>
+  <rect x="458" y="510" width="287" height="60" rx="14" fill="#2c202f" stroke="#c47de0"/>
+  <text x="478" y="537" fill="#d7b1e8" font-size="15">user environment</text>
+  <text x="478" y="560" fill="#ead6f2" font-size="17" font-weight="800">mirror changes registry identity</text>
+  <path d="M600 577v38" stroke="#f0b865" stroke-width="3"/><path d="M592 607l8 13 8-13z" fill="#f0b865"/>
+  <text x="456" y="650" fill="#ffcf78" font-size="16" font-weight="800">Wrong owner:</text>
+  <text x="456" y="676" fill="#bcd0d8" font-size="15">freshness re-checked on user machine.</text>
+
+  <!-- runtime fix -->
+  <text x="836" y="390" fill="#e9f6ef" font-size="17">Consume exactly what the repo committed:</text>
+  <rect x="838" y="419" width="289" height="61" rx="14" fill="#12372c" stroke="#63d9aa"/>
+  <text x="866" y="457" fill="#b5f6d9" font-size="20" font-family="monospace">uv sync --frozen</text>
+  <g fill="#75e5b8">
+    <circle cx="857" cy="528" r="10"/><circle cx="857" cy="572" r="10"/><circle cx="857" cy="616" r="10"/>
+  </g>
+  <path d="M852 528l4 4 7-9M852 572l4 4 7-9M852 616l4 4 7-9" fill="none" stroke="#083c2c" stroke-width="3"/>
+  <text x="880" y="533" fill="#dff6eb" font-size="16">same pinned versions</text>
+  <text x="880" y="577" fill="#dff6eb" font-size="16">hash verification retained</text>
+  <text x="880" y="621" fill="#dff6eb" font-size="16">mirror cannot fake staleness</text>
+  <text x="836" y="674" fill="#a9c8bd" font-size="15">Wheelhouse/offline branch stays unchanged.</text>
+
+  <!-- CI -->
+  <text x="1216" y="390" fill="#fff4da" font-size="17">Freshness moves to repository CI.</text>
+  <rect x="1218" y="418" width="300" height="158" rx="16" fill="#372c18" stroke="#f4bf5a"/>
+  <text x="1242" y="452" fill="#ffe1a1" font-size="16" font-weight="800">uv_lock lane checks:</text>
+  <text x="1242" y="484" fill="#fff2cf" font-size="16">✓ pyproject.toml</text>
+  <text x="1242" y="512" fill="#fff2cf" font-size="16">✓ uv.lock</text>
+  <text x="1242" y="540" fill="#fff2cf" font-size="16">✓ pm/pyproject.toml</text>
+  <text x="1242" y="568" fill="#fff2cf" font-size="16">✓ pm/uv.lock</text>
+  <text x="1216" y="622" fill="#f4d58a" font-size="16" font-weight="800">Ownership invariant</text>
+  <text x="1216" y="650" fill="#cbd5d7" font-size="15">users install frozen locks;</text>
+  <text x="1216" y="674" fill="#cbd5d7" font-size="15">contributors prove they are fresh.</text>
+</g>
+
+<!-- flow arrows -->
+<g fill="#ffe29a" stroke="#c38b3e" stroke-width="2">
+  <path d="M401 506h22l-8-10 26 18-26 18 8-10h-22z"/>
+  <path d="M781 506h22l-8-10 26 18-26 18 8-10h-22z"/>
+  <path d="M1161 506h22l-8-10 26 18-26 18 8-10h-22z"/>
+</g>
+
+<!-- footer -->
+<rect x="46" y="776" width="1508" height="80" rx="22" fill="#07131f" stroke="#39516a"/>
+<g font-family="Inter,DejaVu Sans,Arial,sans-serif">
+  <text x="80" y="810" fill="#72d4ef" font-size="17" font-weight="800">NON-DUPLICATION PROOF</text>
+  <text x="298" y="810" fill="#e2ebef" font-size="16">#123952 fixes runtime only • this branch also moves the missing pm/uv.lock freshness invariant into CI</text>
+  <text x="80" y="839" fill="#92aebc" font-size="14">One commit • no cherry-pick • source owner: pm/runtime_stage.py • policy owner: uv_lock CI lane</text>
+</g>
+</svg>
