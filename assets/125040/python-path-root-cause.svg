@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#050912"/><stop offset="1" stop-color="#0a101e"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#186784" stop-opacity=".22"/><stop offset="1" stop-color="#07101d" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="20"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<circle cx="1190" cy="500" r="390" fill="url(#glow)"/>
+<g opacity=".14" stroke="#7fb8d0" stroke-width="2">
+  <path d="M1268 735V333l137-93 133 91v404z"/><path d="M1405 240v495"/>
+</g>
+<circle cx="1445" cy="158" r="67" fill="#dbe7f4" opacity=".92"/><circle cx="1480" cy="148" r="57" fill="#0a101e"/>
+<g opacity=".62" fill="#172332" stroke="#b96851" stroke-width="5">
+  <ellipse cx="1410" cy="448" rx="44" ry="48"/><ellipse cx="1390" cy="365" rx="14" ry="43"/><ellipse cx="1430" cy="360" rx="14" ry="46"/>
+  <ellipse cx="1410" cy="545" rx="53" ry="77"/><ellipse cx="1490" cy="580" rx="38" ry="35"/><path d="M1475 566l80-55"/>
+</g>
+<circle cx="1428" cy="435" r="5" fill="#ff4f63"/>
+<g font-family="DejaVu Sans,Arial,sans-serif">
+  <text x="68" y="72" fill="#6abdfd" font-size="22" font-weight="700" letter-spacing="1">HERMES • PYTHON PATH</text>
+  <text x="68" y="126" fill="#f2f7ff" font-size="46" font-weight="700">Dependency venv must own python3</text>
+  <text x="68" y="166" fill="#a6b8d0" font-size="21">Issue #125040 • root-cause fix at the PM package contract</text>
+
+  <g>
+    <rect x="60" y="225" width="440" height="495" rx="24" fill="#0a121f" fill-opacity=".92" stroke="#ff4e5b" stroke-width="2"/>
+    <text x="90" y="278" fill="#ff5e69" font-size="25" font-weight="700">1  PROBLEM</text>
+    <rect x="92" y="326" width="330" height="48" rx="14" fill="#45131e" stroke="#ff4e5b" stroke-width="2"/>
+    <text x="111" y="357" fill="#f4e9ed" font-size="20" font-weight="700">PM store Python</text>
+    <rect x="92" y="391" width="330" height="48" rx="14" fill="#102f41" stroke="#54abd0" stroke-width="2"/>
+    <text x="111" y="422" fill="#e9f2f8" font-size="20" font-weight="700">dependency venv</text>
+    <text x="92" y="477" fill="#b9c5d8" font-size="18">store-first activation pushes the</text>
+    <text x="92" y="506" fill="#b9c5d8" font-size="18">bare interpreter ahead of the venv.</text>
+    <path d="M256 526v50" stroke="#ff5e69" stroke-width="4"/><path d="M246 566l10 14 10-14z" fill="#ff5e69"/>
+    <rect x="92" y="592" width="328" height="68" rx="16" fill="#3d101b" stroke="#ff4e5b" stroke-width="2"/>
+    <text x="118" y="620" fill="#ffd0d4" font-size="18" font-weight="700">python3 → wrong interpreter</text>
+    <text x="118" y="649" fill="#ff7f8b" font-size="18" font-family="monospace">import yaml  ×</text>
+  </g>
+
+  <g>
+    <rect x="535" y="225" width="440" height="495" rx="24" fill="#0a121f" fill-opacity=".92" stroke="#f0aa48" stroke-width="2"/>
+    <text x="565" y="278" fill="#f5b650" font-size="25" font-weight="700">2  ROOT CAUSE</text>
+    <rect x="578" y="331" width="352" height="145" rx="18" fill="#141927" stroke="#f0aa48" stroke-width="2"/>
+    <text x="605" y="374" fill="#f7e1b8" font-size="22" font-family="monospace">class Python</text>
+    <text x="605" y="411" fill="#d2dbe8" font-size="18" font-family="monospace">optional = True</text>
+    <text x="605" y="444" fill="#ffb05c" font-size="18" font-family="monospace">on_path = True  ← inherited</text>
+    <text x="578" y="531" fill="#b2bfd2" font-size="18">But its declared role is:</text>
+    <text x="578" y="567" fill="#f4dfb0" font-size="20" font-weight="700">launcher + PM-managed uv interpreter</text>
+    <text x="578" y="607" fill="#b2bfd2" font-size="18">not a user-facing terminal tool.</text>
+  </g>
+
+  <g>
+    <rect x="1010" y="225" width="440" height="495" rx="24" fill="#0a121f" fill-opacity=".92" stroke="#37d2b0" stroke-width="2"/>
+    <text x="1040" y="278" fill="#48e0bc" font-size="25" font-weight="700">3  FIX</text>
+    <rect x="1052" y="331" width="326" height="74" rx="16" fill="#0b2826" stroke="#37d2b0" stroke-width="2"/>
+    <text x="1078" y="377" fill="#79f4d4" font-size="24" font-family="monospace">on_path = False</text>
+    <text x="1052" y="472" fill="#e1eaf4" font-size="18" font-weight="700">PATH after activation</text>
+    <rect x="1052" y="493" width="310" height="48" rx="14" fill="#0b3033" stroke="#37d2b0" stroke-width="2"/>
+    <text x="1071" y="524" fill="#e9f7f4" font-size="20" font-weight="700">dependency venv</text>
+    <text x="1070" y="574" fill="#83eed1" font-size="18" font-family="monospace">python3  ✓  PyYAML visible</text>
+    <text x="1052" y="621" fill="#b7c6d8" font-size="17">Managed Node / npm / ffmpeg stay on PATH.</text>
+    <text x="1052" y="651" fill="#b7c6d8" font-size="17">Launcher + uv still use Python by absolute path.</text>
+  </g>
+
+  <path d="M510 465h18" stroke="#70aac8" stroke-width="4"/><path d="M526 456l14 9-14 9z" fill="#70aac8"/>
+  <path d="M985 465h18" stroke="#70aac8" stroke-width="4"/><path d="M1001 456l14 9-14 9z" fill="#70aac8"/>
+
+  <rect x="60" y="760" width="1390" height="80" rx="20" fill="#0b111c" stroke="#4d6884" stroke-opacity=".65"/>
+  <text x="90" y="802" fill="#6ec1f9" font-size="18" font-weight="700">PROOF</text>
+  <text x="205" y="802" fill="#e0e8f3" font-size="18" font-weight="700">1 commit</text>
+  <circle cx="335" cy="799" r="4" fill="#48d6b4"/><text x="355" y="802" fill="#e0e8f3" font-size="18" font-weight="700">2 files</text>
+  <circle cx="465" cy="799" r="4" fill="#48d6b4"/><text x="485" y="802" fill="#e0e8f3" font-size="18">legacy PATH fact regression</text>
+  <circle cx="765" cy="799" r="4" fill="#48d6b4"/><text x="785" y="802" fill="#e0e8f3" font-size="18">Node/npm unchanged</text>
+  <text x="90" y="831" fill="#8fa2ba" font-size="16">Canonical owner: pm/packages.py • terminal workaround unnecessary</text>
+</g>
+</svg>
