@@ -1,130 +1,185 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#09111c"/><stop offset="0.58" stop-color="#101c2c"/><stop offset="1" stop-color="#05080e"/>
-    </linearGradient>
-    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#39485d"/><stop offset="1" stop-color="#151d28"/>
-    </linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffd98e"/><stop offset="1" stop-color="#f08c46"/>
-    </linearGradient>
-    <pattern id="halftone" width="18" height="18" patternUnits="userSpaceOnUse">
-      <circle cx="3" cy="3" r="1.4" fill="#8da1bb" opacity=".16"/>
-    </pattern>
-    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".45"/></filter>
-    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <rect width="1600" height="900" fill="url(#halftone)"/>
-  <circle cx="1320" cy="120" r="92" fill="url(#sun)" opacity=".95"/>
-  <path d="M0 365 L140 270 L250 330 L380 230 L515 340 L700 250 L840 350 L1040 225 L1210 335 L1390 245 L1600 350 L1600 480 L0 480 Z" fill="#0c1522"/>
-  <path d="M0 405 L170 325 L320 390 L470 300 L640 400 L810 310 L995 390 L1180 310 L1370 385 L1600 315 L1600 500 L0 500 Z" fill="#121f2f"/>
-  <g transform="translate(78,58)">
-    <text x="0" y="0" fill="#f3e6ca" font-family="Arial Black,Arial,sans-serif" font-size="58" font-weight="900" letter-spacing="1">HERMES UPDATE • ISSUE #124926</text>
-    <text x="3" y="46" fill="#96a8bd" font-family="Arial,sans-serif" font-size="23">Node 26 on AlmaLinux: repair the host runtime dependency without making diagnostics mutate the system</text>
+<defs>
+  <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#07111f"/><stop offset=".58" stop-color="#11243a"/><stop offset="1" stop-color="#09131d"/>
+  </linearGradient>
+  <radialGradient id="moon"><stop offset="0" stop-color="#fff3c9"/><stop offset=".72" stop-color="#e9c98d"/><stop offset="1" stop-color="#b68a52"/></radialGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f5ead0"/><stop offset="1" stop-color="#d8c59d"/>
+  </linearGradient>
+  <linearGradient id="gate" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#b73234"/><stop offset="1" stop-color="#541418"/>
+  </linearGradient>
+  <linearGradient id="good" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#b8e6c8"/><stop offset="1" stop-color="#2a8d6b"/>
+  </linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="9"/></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".45"/></filter>
+  <pattern id="waves" width="56" height="28" patternUnits="userSpaceOnUse">
+    <path d="M0 18 Q14 3 28 18 T56 18" fill="none" stroke="#d8c59d" stroke-opacity=".18" stroke-width="2"/>
+  </pattern>
+</defs>
+
+<rect width="1600" height="900" fill="url(#night)"/>
+<rect width="1600" height="900" fill="url(#waves)"/>
+
+<!-- moon and mountain -->
+<circle cx="1275" cy="118" r="82" fill="#e7c582" opacity=".2" filter="url(#glow)"/>
+<circle cx="1275" cy="118" r="68" fill="url(#moon)"/>
+<path d="M930 315 L1170 100 L1260 215 L1335 152 L1545 330 Z" fill="#d8e4ea" opacity=".76"/>
+<path d="M930 315 L1170 100 L1095 248 L1148 221 L1186 262 L1260 215 L1218 293 L1335 152 L1545 330 Z" fill="#31465b" opacity=".8"/>
+<path d="M1130 138 L1170 100 L1198 137 L1178 132 L1160 153 L1147 136 Z" fill="#fff5df" opacity=".92"/>
+
+<!-- distant town -->
+<g opacity=".78">
+  <rect x="1000" y="277" width="520" height="4" fill="#d59d57"/>
+  <g fill="#e1a14f">
+    <rect x="1030" y="247" width="25" height="30"/><rect x="1082" y="236" width="34" height="41"/>
+    <rect x="1142" y="249" width="27" height="28"/><rect x="1202" y="226" width="38" height="51"/>
+    <rect x="1268" y="242" width="30" height="35"/><rect x="1325" y="232" width="34" height="45"/>
+    <rect x="1390" y="247" width="27" height="30"/><rect x="1450" y="230" width="39" height="47"/>
   </g>
-  <g transform="translate(78,175)" filter="url(#shadow)">
-    <rect x="0" y="0" width="1444" height="300" rx="28" fill="#0a1019" stroke="#2a3a50" stroke-width="2"/>
-    <g transform="translate(50,222)">
-      <path d="M0 38 H1320" stroke="#8090a5" stroke-width="9"/>
-      <path d="M0 76 H1320" stroke="#8090a5" stroke-width="9"/>
-      <g stroke="#47586f" stroke-width="7">
-        <path d="M55 25 L78 90"/><path d="M145 25 L168 90"/><path d="M235 25 L258 90"/><path d="M325 25 L348 90"/>
-        <path d="M415 25 L438 90"/><path d="M505 25 L528 90"/><path d="M595 25 L618 90"/><path d="M685 25 L708 90"/>
-        <path d="M775 25 L798 90"/><path d="M865 25 L888 90"/><path d="M955 25 L978 90"/><path d="M1045 25 L1068 90"/>
-        <path d="M1135 25 L1158 90"/><path d="M1225 25 L1248 90"/>
-      </g>
-    </g>
-    <g transform="translate(70,52)">
-      <rect x="0" y="65" width="350" height="120" rx="22" fill="url(#steel)" stroke="#d44e4e" stroke-width="3"/>
-      <rect x="245" y="10" width="100" height="78" rx="14" fill="#1d2a3b" stroke="#53657e"/>
-      <circle cx="80" cy="190" r="38" fill="#0b0f15" stroke="#8a9ab0" stroke-width="7"/>
-      <circle cx="268" cy="190" r="38" fill="#0b0f15" stroke="#8a9ab0" stroke-width="7"/>
-      <rect x="40" y="96" width="145" height="50" rx="10" fill="#0d1723"/>
-      <text x="58" y="127" fill="#f4dfbc" font-size="28" font-family="Arial Black,Arial">NODE 26</text>
-      <path d="M350 106 l55 26 -55 26 z" fill="#d44e4e"/>
-      <g transform="translate(410,30)">
-        <rect x="0" y="0" width="250" height="120" rx="18" fill="#230d13" stroke="#ef5b66" stroke-width="3"/>
-        <text x="24" y="38" fill="#ff8190" font-family="Arial Black,Arial" font-size="23">LOADER EXIT 127</text>
-        <text x="24" y="72" fill="#f5d6d8" font-family="ui-monospace,monospace" font-size="19">libatomic.so.1</text>
-        <text x="24" y="99" fill="#c99199" font-family="ui-monospace,monospace" font-size="16">not found</text>
-      </g>
-      <path d="M660 88 H780" stroke="#e95757" stroke-width="8" stroke-dasharray="16 12"/>
-      <polygon points="780,88 752,70 752,106" fill="#e95757"/>
-    </g>
-    <g transform="translate(830,35)">
-      <circle cx="95" cy="102" r="78" fill="#132234" stroke="#e7b15c" stroke-width="4"/>
-      <circle cx="95" cy="102" r="44" fill="#0c141f" stroke="#e7b15c" stroke-width="3"/>
-      <path d="M95 25 V179 M18 102 H172 M42 49 L148 155 M148 49 L42 155" stroke="#e7b15c" stroke-width="9"/>
-      <rect x="192" y="16" width="390" height="168" rx="22" fill="#0c1622" stroke="#3e526c" stroke-width="2"/>
-      <text x="220" y="53" fill="#f3e6ca" font-family="Arial Black,Arial" font-size="26">MOVE THE MUTATION</text>
-      <text x="220" y="86" fill="#91a5bd" font-family="Arial,sans-serif" font-size="18">verify() stays diagnostic</text>
-      <text x="220" y="115" fill="#91a5bd" font-family="Arial,sans-serif" font-size="18">staged install owns repair</text>
-      <text x="220" y="144" fill="#52dda9" font-family="ui-monospace,monospace" font-size="18">dnf / apt / yum / ...</text>
-      <text x="220" y="169" fill="#52dda9" font-family="ui-monospace,monospace" font-size="18">re-probe Node</text>
-    </g>
+</g>
+
+<!-- torii/gateway -->
+<g transform="translate(1015,165)" filter="url(#shadow)">
+  <rect x="88" y="78" width="28" height="180" rx="8" fill="#5c171d"/>
+  <rect x="322" y="78" width="28" height="180" rx="8" fill="#5c171d"/>
+  <rect x="52" y="64" width="332" height="27" rx="8" fill="url(#gate)"/>
+  <rect x="24" y="42" width="388" height="22" rx="8" fill="#c1403c"/>
+  <rect x="121" y="94" width="196" height="56" rx="10" fill="#e7cc92" stroke="#7d522e" stroke-width="4"/>
+  <text x="219" y="120" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#432419">STAGED REPAIR</text>
+  <text x="219" y="143" text-anchor="middle" font-family="monospace" font-size="16" fill="#62422c">verify() stays read-only</text>
+</g>
+
+<!-- branches / leaves -->
+<g fill="#a9232e" opacity=".9">
+  <circle cx="90" cy="58" r="10"/><circle cx="125" cy="80" r="8"/><circle cx="160" cy="48" r="11"/>
+  <circle cx="1510" cy="56" r="10"/><circle cx="1478" cy="88" r="8"/><circle cx="1540" cy="104" r="11"/>
+  <circle cx="72" cy="205" r="8"/><circle cx="112" cy="186" r="9"/><circle cx="152" cy="216" r="7"/>
+</g>
+<g stroke="#672029" stroke-width="6" fill="none">
+  <path d="M0 75 Q90 30 195 85"/><path d="M1600 64 Q1515 25 1430 92"/>
+</g>
+
+<!-- lanterns -->
+<g transform="translate(790,92)">
+  <rect x="-5" y="-15" width="10" height="20" fill="#4c2724"/>
+  <ellipse cx="0" cy="28" rx="30" ry="42" fill="#dc6a3d" stroke="#f0c06c" stroke-width="3"/>
+  <path d="M-22 10 H22 M-27 27 H27 M-20 45 H20" stroke="#6a2a28" stroke-width="2"/>
+  <circle cx="0" cy="28" r="15" fill="#ffd47c" opacity=".34" filter="url(#glow)"/>
+</g>
+<g transform="translate(945,120) scale(.72)">
+  <rect x="-5" y="-15" width="10" height="20" fill="#4c2724"/>
+  <ellipse cx="0" cy="28" rx="30" ry="42" fill="#dc6a3d" stroke="#f0c06c" stroke-width="3"/>
+  <path d="M-22 10 H22 M-27 27 H27 M-20 45 H20" stroke="#6a2a28" stroke-width="2"/>
+</g>
+
+<!-- title -->
+<g filter="url(#shadow)">
+  <rect x="42" y="38" width="850" height="246" rx="28" fill="#08111d" fill-opacity=".88" stroke="#bd3435" stroke-width="3"/>
+  <rect x="75" y="72" width="13" height="150" fill="#b92e33"/>
+  <text x="115" y="113" font-family="Georgia,serif" font-size="58" font-weight="700" fill="#f4e5bf">NODE 26 · LIBATOMIC</text>
+  <text x="115" y="178" font-family="Georgia,serif" font-size="54" font-weight="700" fill="#f4e5bf">INSTALL BOUNDARY</text>
+  <text x="117" y="226" font-family="Arial,sans-serif" font-size="24" fill="#d8e0e8">Issue #124926 · AlmaLinux / RHEL-family update recovery</text>
+  <text x="117" y="260" font-family="Arial,sans-serif" font-size="23" fill="#74ddb1">Repair only while staging. Keep verify() read-only.</text>
+</g>
+
+<!-- failure trail -->
+<g transform="translate(905,315)">
+  <path d="M0 0 C90 55 130 40 210 98 C270 143 338 116 455 164" fill="none" stroke="#e4d1a8" stroke-width="16" stroke-linecap="round" opacity=".8"/>
+  <path d="M0 0 C90 55 130 40 210 98 C270 143 338 116 455 164" fill="none" stroke="#ffffff" stroke-width="3" stroke-dasharray="13 16" opacity=".72"/>
+  <text x="80" y="63" font-family="monospace" font-size="18" fill="#ffe9c2" transform="rotate(17 80 63)">libatomic.so.1 missing</text>
+  <text x="280" y="130" font-family="monospace" font-size="18" fill="#baf1d3" transform="rotate(13 280 130)">repair → retry → publish</text>
+</g>
+
+<!-- panel helpers -->
+<g filter="url(#shadow)">
+  <rect x="28" y="350" width="374" height="496" rx="26" fill="url(#paper)" stroke="#4d3529" stroke-width="3"/>
+  <rect x="420" y="350" width="374" height="496" rx="26" fill="url(#paper)" stroke="#4d3529" stroke-width="3"/>
+  <rect x="812" y="350" width="374" height="496" rx="26" fill="url(#paper)" stroke="#4d3529" stroke-width="3"/>
+  <rect x="1204" y="350" width="368" height="496" rx="26" fill="url(#paper)" stroke="#4d3529" stroke-width="3"/>
+</g>
+
+<!-- headers -->
+<g font-family="Arial,sans-serif" font-weight="700" fill="#20262a">
+  <circle cx="72" cy="395" r="32" fill="#b53034"/><text x="72" y="406" text-anchor="middle" font-size="30" fill="#fff">1</text>
+  <text x="116" y="404" font-size="30">BEFORE</text>
+  <circle cx="464" cy="395" r="32" fill="#ac5c26"/><text x="464" y="406" text-anchor="middle" font-size="30" fill="#fff">2</text>
+  <text x="508" y="404" font-size="30">ROOT CAUSE</text>
+  <circle cx="856" cy="395" r="32" fill="#23805f"/><text x="856" y="406" text-anchor="middle" font-size="30" fill="#fff">3</text>
+  <text x="900" y="404" font-size="30">FIX</text>
+  <circle cx="1248" cy="395" r="32" fill="#23805f"/><text x="1248" y="406" text-anchor="middle" font-size="30" fill="#fff">4</text>
+  <text x="1292" y="404" font-size="30">RESULT</text>
+</g>
+
+<!-- bullets -->
+<g font-family="Arial,sans-serif" font-size="20" fill="#34312c">
+  <g transform="translate(54,447)">
+    <circle cx="10" cy="8" r="11" fill="#b53034"/><text x="10" y="15" text-anchor="middle" fill="#fff" font-weight="700">×</text>
+    <text x="37" y="13">PM stages official Node 26.</text>
+    <circle cx="10" cy="65" r="11" fill="#b53034"/><text x="10" y="72" text-anchor="middle" fill="#fff" font-weight="700">×</text>
+    <text x="37" y="62">node --version runs as smoke probe.</text>
+    <circle cx="10" cy="122" r="11" fill="#b53034"/><text x="10" y="129" text-anchor="middle" fill="#fff" font-weight="700">×</text>
+    <text x="37" y="119">Loader cannot find libatomic.so.1.</text>
+    <circle cx="10" cy="179" r="11" fill="#b53034"/><text x="10" y="186" text-anchor="middle" fill="#fff" font-weight="700">×</text>
+    <text x="37" y="176">Exit 127 rejects the staged tree.</text>
   </g>
-  <g transform="translate(70,505)" font-family="Arial,sans-serif">
-    <g>
-      <rect width="350" height="320" rx="24" fill="#f2e6cc" stroke="#d9c7a5" stroke-width="3"/>
-      <circle cx="38" cy="38" r="26" fill="#a92f3d"/><text x="31" y="47" fill="#fff" font-size="25" font-weight="700">1</text>
-      <text x="78" y="48" fill="#121820" font-family="Arial Black,Arial" font-size="28">BEFORE</text>
-      <text x="28" y="92" fill="#82323b" font-family="Arial Black,Arial" font-size="17">UPDATE STOPS AFTER GIT PULL</text>
-      <g fill="#19232f" font-size="14.5">
-        <text x="32" y="132">• PM stages official nodejs.org Node</text>
-        <text x="32" y="169">• node --version hits the dynamic loader</text>
-        <text x="32" y="206">• libatomic.so.1 is absent on AlmaLinux</text>
-        <text x="32" y="243">• staged Node is rejected and discarded</text>
-      </g>
-      <rect x="28" y="266" width="294" height="34" rx="8" fill="#261116"/>
-      <text x="44" y="289" fill="#ff8a93" font-family="ui-monospace,monospace" font-size="15">Update preparation failed</text>
-    </g>
-    <g transform="translate(375,0)">
-      <rect width="350" height="320" rx="24" fill="#f2e6cc" stroke="#d9c7a5" stroke-width="3"/>
-      <circle cx="38" cy="38" r="26" fill="#b8642a"/><text x="31" y="47" fill="#fff" font-size="25" font-weight="700">2</text>
-      <text x="78" y="48" fill="#121820" font-family="Arial Black,Arial" font-size="28">ROOT CAUSE</text>
-      <text x="28" y="92" fill="#80501f" font-family="Arial Black,Arial" font-size="17">DEPENDENCY MOVED, OWNER DID NOT</text>
-      <g fill="#19232f" font-size="14.5">
-        <text x="32" y="132">• Node 25+ needs libatomic.so.1</text>
-        <text x="32" y="169">• old shell installer covered apt/libatomic1</text>
-        <text x="32" y="206">• PM now owns Node staging during update</text>
-        <text x="32" y="243">• host prerequisite was missing in that path</text>
-      </g>
-      <rect x="28" y="266" width="294" height="34" rx="8" fill="#1a2430"/>
-      <text x="44" y="289" fill="#f6d28f" font-family="ui-monospace,monospace" font-size="15">verify stays read-only</text>
-    </g>
-    <g transform="translate(750,0)">
-      <rect width="350" height="320" rx="24" fill="#f2e6cc" stroke="#d9c7a5" stroke-width="3"/>
-      <circle cx="38" cy="38" r="26" fill="#256d6a"/><text x="31" y="47" fill="#fff" font-size="25" font-weight="700">3</text>
-      <text x="78" y="48" fill="#121820" font-family="Arial Black,Arial" font-size="28">FIX</text>
-      <text x="28" y="92" fill="#1f6f62" font-family="Arial Black,Arial" font-size="17">REPAIR ONLY AT STAGED INSTALL</text>
-      <g fill="#19232f" font-size="14.5">
-        <text x="32" y="132">• exact loader failure triggers repair hook</text>
-        <text x="32" y="169">• Alma/RHEL: dnf install libatomic</text>
-        <text x="32" y="206">• Debian/Ubuntu: apt install libatomic1</text>
-        <text x="32" y="243">• then re-run Node smoke probe once</text>
-      </g>
-      <rect x="28" y="266" width="294" height="34" rx="8" fill="#10251f"/>
-      <text x="44" y="289" fill="#77e5b5" font-family="ui-monospace,monospace" font-size="15">doctor stays read-only</text>
-    </g>
-    <g transform="translate(1125,0)">
-      <rect width="350" height="320" rx="24" fill="#f2e6cc" stroke="#d9c7a5" stroke-width="3"/>
-      <circle cx="38" cy="38" r="26" fill="#2f7b4a"/><text x="31" y="47" fill="#fff" font-size="25" font-weight="700">4</text>
-      <text x="78" y="48" fill="#121820" font-family="Arial Black,Arial" font-size="28">RESULT</text>
-      <text x="28" y="92" fill="#2d6b3e" font-family="Arial Black,Arial" font-size="17">UPDATE RECOVERS SAFELY</text>
-      <g fill="#19232f" font-size="14.5">
-        <text x="32" y="132">• Node accepted after dependency repair</text>
-        <text x="32" y="169">• diagnostics never install host packages</text>
-        <text x="32" y="206">• cross-target staging remains untouched</text>
-        <text x="32" y="243">• failure names the exact admin command</text>
-      </g>
-      <rect x="28" y="266" width="294" height="34" rx="8" fill="#10251f"/>
-      <text x="44" y="289" fill="#77e5b5" font-family="ui-monospace,monospace" font-size="15">stage / repair / re-probe / publish</text>
-    </g>
+
+  <g transform="translate(446,447)">
+    <circle cx="10" cy="8" r="11" fill="#ac5c26"/><text x="10" y="14" text-anchor="middle" fill="#fff" font-weight="700">!</text>
+    <text x="37" y="13">Node now comes from PM.</text>
+    <circle cx="10" cy="65" r="11" fill="#ac5c26"/><text x="10" y="71" text-anchor="middle" fill="#fff" font-weight="700">!</text>
+    <text x="37" y="62">libatomic is a host runtime library.</text>
+    <circle cx="10" cy="122" r="11" fill="#ac5c26"/><text x="10" y="128" text-anchor="middle" fill="#fff" font-weight="700">!</text>
+    <text x="37" y="116">verify() also powers doctor/read</text><text x="37" y="141">and build/cache checks.</text>
+    <circle cx="10" cy="192" r="11" fill="#ac5c26"/><text x="10" y="198" text-anchor="middle" fill="#fff" font-weight="700">!</text>
+    <text x="37" y="187">sudo inside verify() would mutate</text><text x="37" y="212">read-only diagnostic paths.</text>
   </g>
-  <g transform="translate(80,858)">
-    <circle cx="8" cy="0" r="7" fill="#e6ad58" filter="url(#glow)"/>
-    <text x="28" y="7" fill="#889bb2" font-family="Arial,sans-serif" font-size="16">Retro-futurist maintenance poster • one focused commit • no cherry-picks • #124926</text>
+
+  <g transform="translate(838,447)">
+    <circle cx="10" cy="8" r="11" fill="#23805f"/><text x="10" y="15" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="13">Staged verify sees exact loader error.</text>
+    <circle cx="10" cy="65" r="11" fill="#23805f"/><text x="10" y="72" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="60">repair_staged_verification()</text><text x="37" y="85">owns host remediation.</text>
+    <circle cx="10" cy="135" r="11" fill="#23805f"/><text x="10" y="142" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="130">Alma/RHEL → libatomic</text><text x="37" y="155">Debian/Ubuntu → libatomic1</text>
+    <circle cx="10" cy="205" r="11" fill="#23805f"/><text x="10" y="212" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="200">Fail-fast sudo in noninteractive</text><text x="37" y="225">workers; retry Node once.</text>
   </g>
+
+  <g transform="translate(1230,447)">
+    <circle cx="10" cy="8" r="11" fill="#23805f"/><text x="10" y="15" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="13">Publish only after a green probe.</text>
+    <circle cx="10" cy="65" r="11" fill="#23805f"/><text x="10" y="72" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="60">pm doctor remains diagnostic</text><text x="37" y="85">and read-only.</text>
+    <circle cx="10" cy="135" r="11" fill="#23805f"/><text x="10" y="142" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="130">Cross-target staging never</text><text x="37" y="155">mutates the host.</text>
+    <circle cx="10" cy="205" r="11" fill="#23805f"/><text x="10" y="212" text-anchor="middle" fill="#fff" font-weight="700">✓</text>
+    <text x="37" y="200">Failed repair names the exact</text><text x="37" y="225">manual package command.</text>
+  </g>
+</g>
+
+<!-- terminal cards -->
+<g font-family="monospace" font-size="17">
+  <rect x="54" y="710" width="322" height="105" rx="14" fill="#0b1520" stroke="#24394d" stroke-width="2"/>
+  <text x="72" y="742" fill="#dbe5ed">node --version</text><text x="72" y="770" fill="#f07c79">→ exit 127</text><text x="72" y="798" fill="#f2d0a1">libatomic.so.1 ⇒ not found</text>
+  <rect x="446" y="710" width="322" height="105" rx="14" fill="#0b1520" stroke="#24394d" stroke-width="2"/>
+  <text x="464" y="742" fill="#76dfb1">verify() = diagnosis</text><text x="464" y="770" fill="#dbe5ed">not privilege escalation</text><text x="464" y="798" fill="#f2d0a1">owner = staged install</text>
+  <rect x="838" y="710" width="322" height="105" rx="14" fill="#0b1520" stroke="#24394d" stroke-width="2"/>
+  <text x="856" y="742" fill="#76dfb1">sudo -n dnf install -y libatomic</text><text x="856" y="770" fill="#76dfb1">apt-get install -y libatomic1</text><text x="856" y="798" fill="#dbe5ed">retry node --version</text>
+  <rect x="1230" y="710" width="316" height="105" rx="14" fill="#0b1520" stroke="#24394d" stroke-width="2"/>
+  <text x="1248" y="742" fill="#76dfb1">staged probe: GREEN</text><text x="1248" y="770" fill="#dbe5ed">publish: allowed</text><text x="1248" y="798" fill="#dbe5ed">doctor: no sudo</text>
+</g>
+
+<!-- arrows -->
+<g fill="#f1dfb7" opacity=".95">
+  <path d="M400 585 l22 -18 v12 h22 v12 h-22 v12 z"/>
+  <path d="M792 585 l22 -18 v12 h22 v12 h-22 v12 z"/>
+  <path d="M1184 585 l22 -18 v12 h22 v12 h-22 v12 z"/>
+</g>
+
+<!-- footer -->
+<rect x="390" y="858" width="820" height="30" rx="15" fill="#07111b" stroke="#80613f"/>
+<text x="800" y="879" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#dce4e9">PR #124961 · one focused commit · install-boundary repair · regression coverage</text>
 </svg>
