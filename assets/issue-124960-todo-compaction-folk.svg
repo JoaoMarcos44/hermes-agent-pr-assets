@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e9c7"/><stop offset="1" stop-color="#dbc091"/></linearGradient>
+  <linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#102c2b"/><stop offset="1" stop-color="#173a32"/></linearGradient>
+  <linearGradient id="loom" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b73b32"/><stop offset=".5" stop-color="#dc8a37"/><stop offset="1" stop-color="#2e7a58"/></linearGradient>
+  <pattern id="weave" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M0 12H24M12 0V24" stroke="#f3d9a6" stroke-width="2" opacity=".16"/>
+    <path d="M0 0L24 24M24 0L0 24" stroke="#b93832" stroke-width="1" opacity=".13"/>
+  </pattern>
+  <filter id="shadow"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-opacity=".38"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#night)"/><rect width="1600" height="900" fill="url(#weave)"/>
+
+<!-- folk floral border -->
+<g stroke="#183f32" stroke-width="5" fill="none">
+  <path d="M18 185 Q95 105 188 68 Q286 28 380 70"/>
+  <path d="M1220 70 Q1322 22 1416 70 Q1508 115 1582 198"/>
+  <path d="M24 830 Q118 774 210 816 Q304 858 392 820"/>
+  <path d="M1208 820 Q1304 864 1400 816 Q1492 770 1578 830"/>
+</g>
+<g fill="#e55b3c" stroke="#7d2725" stroke-width="2">
+  <g transform="translate(78,104)"><circle r="13"/><circle cx="24" r="13"/><circle cx="12" cy="-21" r="13"/><circle cx="12" cy="21" r="13"/><circle cx="12" r="7" fill="#f0c85d"/></g>
+  <g transform="translate(210,62)"><circle r="11"/><circle cx="21" r="11"/><circle cx="10" cy="-19" r="11"/><circle cx="10" cy="19" r="11"/><circle cx="10" r="6" fill="#f0c85d"/></g>
+  <g transform="translate(1390,70)"><circle r="13"/><circle cx="24" r="13"/><circle cx="12" cy="-21" r="13"/><circle cx="12" cy="21" r="13"/><circle cx="12" r="7" fill="#f0c85d"/></g>
+  <g transform="translate(1500,123)"><circle r="11"/><circle cx="21" r="11"/><circle cx="10" cy="-19" r="11"/><circle cx="10" cy="19" r="11"/><circle cx="10" r="6" fill="#f0c85d"/></g>
+</g>
+<g fill="#6aa05e"><ellipse cx="126" cy="83" rx="11" ry="25" transform="rotate(43 126 83)"/><ellipse cx="262" cy="67" rx="11" ry="25" transform="rotate(-48 262 67)"/><ellipse cx="1450" cy="90" rx="11" ry="25" transform="rotate(48 1450 90)"/></g>
+
+<!-- title -->
+<g filter="url(#shadow)">
+  <rect x="245" y="30" width="1110" height="142" rx="30" fill="#f4dfb5" stroke="#8b3d2d" stroke-width="5"/>
+  <text x="800" y="87" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="700" fill="#243a31">PRESERVE TODO STATE ACROSS COMPACTION</text>
+  <text x="800" y="128" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#6d332b">Issue #124960 · structured state, exact revision, no parsing of user text</text>
+  <text x="800" y="156" text-anchor="middle" font-family="monospace" font-size="17" fill="#2e6950">Hermes Agent · one focused commit</text>
+</g>
+
+<!-- central folk motif / loom -->
+<g transform="translate(665,180)" filter="url(#shadow)">
+  <path d="M15 120 Q135 2 270 120 Q135 235 15 120Z" fill="#f0c45e" stroke="#763a2e" stroke-width="5"/>
+  <circle cx="143" cy="120" r="63" fill="#2b6c55" stroke="#f5e0aa" stroke-width="5"/>
+  <path d="M108 119 l23 24 49-55" fill="none" stroke="#f8e9bc" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#b63c32"><circle cx="48" cy="110" r="12"/><circle cx="238" cy="110" r="12"/><circle cx="143" cy="43" r="10"/><circle cx="143" cy="197" r="10"/></g>
+  <text x="143" y="252" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#f4e5ba">trusted carrier</text>
+</g>
+
+<!-- four story panels -->
+<g filter="url(#shadow)">
+  <rect x="35" y="335" width="365" height="485" rx="26" fill="url(#paper)" stroke="#9b352f" stroke-width="5"/>
+  <rect x="425" y="335" width="365" height="485" rx="26" fill="url(#paper)" stroke="#2f5b72" stroke-width="5"/>
+  <rect x="815" y="335" width="365" height="485" rx="26" fill="url(#paper)" stroke="#2d7754" stroke-width="5"/>
+  <rect x="1205" y="335" width="360" height="485" rx="26" fill="url(#paper)" stroke="#ba6629" stroke-width="5"/>
+</g>
+
+<!-- headers -->
+<g font-family="Georgia,serif" font-weight="700">
+  <circle cx="82" cy="385" r="31" fill="#ad302f"/><text x="82" y="396" text-anchor="middle" font-size="29" fill="#fff">1</text><text x="125" y="397" font-size="31" fill="#73302a">BEFORE</text>
+  <circle cx="472" cy="385" r="31" fill="#315c72"/><text x="472" y="396" text-anchor="middle" font-size="29" fill="#fff">2</text><text x="515" y="397" font-size="31" fill="#26475a">ROOT CAUSE</text>
+  <circle cx="862" cy="385" r="31" fill="#2b7754"/><text x="862" y="396" text-anchor="middle" font-size="29" fill="#fff">3</text><text x="905" y="397" font-size="31" fill="#275e45">FIX</text>
+  <circle cx="1252" cy="385" r="31" fill="#b86829"/><text x="1252" y="396" text-anchor="middle" font-size="29" fill="#fff">4</text><text x="1295" y="397" font-size="31" fill="#8a4a23">RESULT</text>
+</g>
+
+<!-- panel 1 -->
+<g transform="translate(58,435)" font-family="Arial,sans-serif">
+  <text font-size="20" font-weight="700" fill="#342b28">11 todos are created successfully.</text>
+  <rect y="35" width="318" height="118" rx="15" fill="#17242a" stroke="#75513a" stroke-width="3"/>
+  <text x="18" y="66" font-family="monospace" font-size="16" fill="#f1dfb8">todo_list(create)</text>
+  <text x="18" y="96" font-family="monospace" font-size="15" fill="#79d4a4">{ "todos": [... 11 ...],</text>
+  <text x="18" y="122" font-family="monospace" font-size="15" fill="#79d4a4">  "revision": 1 }</text>
+  <path d="M160 160V205" stroke="#a93734" stroke-width="7"/><polygon points="160,220 146,198 174,198" fill="#a93734"/>
+  <rect x="18" y="225" width="282" height="68" rx="12" fill="#b84437"/>
+  <text x="159" y="253" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">pressure compaction</text>
+  <text x="159" y="279" text-anchor="middle" font-size="16" fill="#ffe4cf">tool JSON → one-line stub</text>
+  <rect y="320" width="318" height="110" rx="15" fill="#17242a"/>
+  <text x="18" y="350" font-family="monospace" font-size="15" fill="#e9c99a">fresh AIAgent</text>
+  <text x="18" y="380" font-family="monospace" font-size="15" fill="#ef7d72">TodoStore revision: 0</text>
+  <text x="18" y="408" font-family="monospace" font-size="15" fill="#ef7d72">todos: []</text>
+</g>
+
+<!-- panel 2 -->
+<g transform="translate(448,435)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#342b28">The model-facing snapshot survives...</text>
+  <rect y="36" width="318" height="90" rx="14" fill="#efe0bb" stroke="#876d47" stroke-width="3"/>
+  <text x="16" y="68" font-family="monospace" font-size="14" fill="#69442d">TODO_INJECTION_HEADER</text>
+  <text x="16" y="95" font-size="16" fill="#4f4538">human-facing text only</text>
+  <text x="16" y="117" font-size="16" fill="#4f4538">not durable state authority</text>
+  <g transform="translate(0,155)">
+    <path d="M22 0 L52 55 H-8 Z" fill="#d46a32" stroke="#813124" stroke-width="3"/>
+    <text x="22" y="42" text-anchor="middle" font-size="30" font-weight="700" fill="#fff">!</text>
+    <text x="72" y="22" font-size="18" font-weight="700" fill="#70342d">Parsing user text is unsafe.</text>
+    <text x="72" y="50" font-size="16" fill="#4a4037">A caller can reproduce the same</text>
+    <text x="72" y="73" font-size="16" fill="#4a4037">header and list syntax.</text>
+  </g>
+  <g transform="translate(18,275)">
+    <path d="M0 45 Q72 -15 144 45 Q216 105 286 45" fill="none" stroke="#315c72" stroke-width="7"/>
+    <circle cx="0" cy="45" r="12" fill="#315c72"/><circle cx="286" cy="45" r="12" fill="#315c72"/>
+    <text x="143" y="15" text-anchor="middle" font-size="17" fill="#315c72">trust boundary</text>
+    <text x="143" y="91" text-anchor="middle" font-size="16" fill="#4a4037">text ≠ authority</text>
+  </g>
+</g>
+
+<!-- panel 3 -->
+<g transform="translate(838,435)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#342b28">Carry state beside the prompt, not inside it.</text>
+  <g transform="translate(6,45)">
+    <rect width="306" height="104" rx="16" fill="#2b7054"/>
+    <text x="16" y="30" font-family="monospace" font-size="15" fill="#fff0c8">display_metadata.todo_snapshot</text>
+    <text x="16" y="58" font-family="monospace" font-size="15" fill="#d2f2df">{ todos: [...], revision: 1 }</text>
+    <text x="16" y="84" font-size="15" fill="#e2f2e8">persistence-only · not model-visible</text>
+  </g>
+  <g transform="translate(12,176)">
+    <circle cx="36" cy="35" r="31" fill="#d5a33d" stroke="#784b25" stroke-width="3"/>
+    <path d="M36 10v50M20 35h32" stroke="#fff0bf" stroke-width="7"/>
+    <text x="82" y="27" font-size="18" font-weight="700" fill="#315d46">process-local provenance</text>
+    <text x="82" y="53" font-size="16" fill="#4b4036">live compressor token</text>
+    <text x="82" y="76" font-size="16" fill="#4b4036">SessionDB-loaded token</text>
+  </g>
+  <g transform="translate(6,282)">
+    <rect width="306" height="104" rx="16" fill="#eee0bd" stroke="#47775c" stroke-width="3"/>
+    <text x="16" y="31" font-size="17" font-weight="700" fill="#315d46">Persistence gate</text>
+    <text x="16" y="58" font-size="15" fill="#4b4036">untrusted todo_snapshot → stripped</text>
+    <text x="16" y="82" font-size="15" fill="#4b4036">trusted carrier → durable</text>
+  </g>
+</g>
+
+<!-- panel 4 -->
+<g transform="translate(1228,435)" font-family="Arial,sans-serif">
+  <g fill="#2f8b5e">
+    <circle cx="16" cy="12" r="13"/><circle cx="16" cy="74" r="13"/><circle cx="16" cy="136" r="13"/><circle cx="16" cy="198" r="13"/>
+  </g>
+  <g font-size="18" font-weight="700" fill="#fff"><text x="16" y="19" text-anchor="middle">✓</text><text x="16" y="81" text-anchor="middle">✓</text><text x="16" y="143" text-anchor="middle">✓</text><text x="16" y="205" text-anchor="middle">✓</text></g>
+  <g font-size="17" fill="#3d382f">
+    <text x="44" y="8">11 todos survive compaction</text><text x="44" y="31">and cold resume.</text>
+    <text x="44" y="70">Exact revision survives, too.</text>
+    <text x="44" y="132">Forged header / metadata</text><text x="44" y="155">cannot seed durable state.</text>
+    <text x="44" y="194">Structured carrier adds</text><text x="44" y="217">zero prompt tokens.</text>
+  </g>
+  <g transform="translate(18,270)">
+    <path d="M0 90 Q118 -18 238 90 Q118 195 0 90Z" fill="#e8b84d" stroke="#8b4b26" stroke-width="4"/>
+    <circle cx="119" cy="90" r="52" fill="#378563"/>
+    <path d="M91 90l19 20 39-48" fill="none" stroke="#fff2c4" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="119" y="176" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#704228">same tasks · safer journey</text>
+  </g>
+</g>
+
+<!-- folk birds -->
+<g fill="#e8c05a" stroke="#632c28" stroke-width="3">
+  <path d="M105 270 q35-45 72 0 q-30-13-36 18 q-8-31-36-18Z"/>
+  <path d="M1455 265 q35-45 72 0 q-30-13-36 18 q-8-31-36-18Z"/>
+</g>
+<!-- footer -->
+<text x="800" y="865" text-anchor="middle" font-family="Georgia,serif" font-size="19" fill="#f1d99e">structured state is woven through compression · user text remains just text</text>
+</svg>
