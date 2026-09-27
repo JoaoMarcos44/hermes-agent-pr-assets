@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#253a53"/><stop offset=".55" stop-color="#6f8b93"/><stop offset="1" stop-color="#d6b77d"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3d7"/><stop offset="1" stop-color="#e2c99e"/></linearGradient>
+  <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b84932"/><stop offset=".5" stop-color="#dc8b35"/><stop offset="1" stop-color="#d7b34b"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="1.1"/></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#203040" flood-opacity=".35"/></filter>
+  <pattern id="papergrain" width="19" height="19" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1" fill="#7d6948" opacity=".07"/><circle cx="14" cy="12" r="1.2" fill="#7d6948" opacity=".06"/></pattern>
+</defs>
+
+<rect width="1600" height="900" fill="url(#sky)"/>
+<rect width="1600" height="900" fill="url(#papergrain)"/>
+
+<!-- watercolor forest -->
+<g opacity=".7">
+  <path d="M0 300 Q110 215 220 292 Q330 185 435 296 Q570 175 700 292 Q835 205 940 290 Q1100 170 1210 292 Q1370 180 1600 292 V410 H0Z" fill="#284e45"/>
+  <path d="M0 350 Q140 275 290 340 Q430 260 590 340 Q760 250 905 345 Q1060 270 1230 342 Q1415 260 1600 340 V450 H0Z" fill="#44694b" opacity=".72"/>
+</g>
+<g fill="url(#leaf)" opacity=".92">
+  <circle cx="74" cy="175" r="21"/><circle cx="112" cy="140" r="17"/><circle cx="155" cy="177" r="19"/>
+  <circle cx="1430" cy="148" r="21"/><circle cx="1480" cy="183" r="18"/><circle cx="1542" cy="138" r="23"/>
+  <circle cx="350" cy="264" r="12"/><circle cx="389" cy="238" r="15"/><circle cx="1225" cy="253" r="14"/>
+</g>
+<g stroke="#583d2e" stroke-width="8" fill="none" opacity=".75"><path d="M0 224 Q105 120 190 186"/><path d="M1600 218 Q1498 116 1390 188"/></g>
+
+<!-- title parchment -->
+<g filter="url(#shadow)">
+  <rect x="210" y="32" width="1180" height="166" rx="32" fill="url(#paper)" stroke="#73533a" stroke-width="4"/>
+  <text x="800" y="90" text-anchor="middle" font-family="Georgia,serif" font-size="52" font-weight="700" fill="#283745">SSH UPDATE-CLEAR PROBE</text>
+  <text x="800" y="133" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#8d4a2b">Issue #125060 · retry transport uncertainty without pretending an update is active</text>
+  <text x="800" y="168" text-anchor="middle" font-family="monospace" font-size="18" fill="#496a5a">watchdog · 2 bounded attempts · true update verdicts still fail closed</text>
+</g>
+
+<!-- penguin explorer -->
+<g transform="translate(690,205)" filter="url(#shadow)">
+  <ellipse cx="108" cy="105" rx="74" ry="93" fill="#202c34" stroke="#182027" stroke-width="5"/>
+  <ellipse cx="108" cy="122" rx="48" ry="66" fill="#f7ecd4"/>
+  <circle cx="108" cy="34" r="45" fill="#202c34"/>
+  <ellipse cx="96" cy="33" rx="7" ry="10" fill="#fff"/><ellipse cx="123" cy="33" rx="7" ry="10" fill="#fff"/>
+  <circle cx="97" cy="35" r="3" fill="#1b1b1b"/><circle cx="122" cy="35" r="3" fill="#1b1b1b"/>
+  <path d="M107 43 l19 9 -20 8 z" fill="#db8b37"/>
+  <path d="M56 78 Q105 105 164 75" fill="none" stroke="#a33a32" stroke-width="16"/>
+  <path d="M165 89 Q205 116 220 151" fill="none" stroke="#a33a32" stroke-width="12"/>
+  <rect x="31" y="95" width="42" height="60" rx="8" fill="#73513d" stroke="#3c2f28" stroke-width="4"/>
+  <circle cx="181" cy="128" r="23" fill="#d4ad51" stroke="#674625" stroke-width="4"/>
+  <circle cx="181" cy="128" r="15" fill="#f7e6aa"/><path d="M181 128v-10M181 128l9 7" stroke="#674625" stroke-width="3"/>
+  <text x="107" y="213" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#f7ecd4">HERMES EXPLORER</text>
+</g>
+
+<!-- firefly trail -->
+<g fill="#f9df72" opacity=".9" filter="url(#soft)">
+  <circle cx="620" cy="282" r="5"/><circle cx="582" cy="315" r="4"/><circle cx="1010" cy="287" r="5"/><circle cx="1048" cy="320" r="4"/>
+  <circle cx="528" cy="340" r="3"/><circle cx="1100" cy="344" r="3"/>
+</g>
+
+<!-- panels -->
+<g filter="url(#shadow)">
+  <rect x="32" y="425" width="370" height="422" rx="28" fill="url(#paper)" stroke="#98412f" stroke-width="4"/>
+  <rect x="421" y="425" width="370" height="422" rx="28" fill="url(#paper)" stroke="#6f5439" stroke-width="4"/>
+  <rect x="810" y="425" width="370" height="422" rx="28" fill="url(#paper)" stroke="#3f745c" stroke-width="4"/>
+  <rect x="1199" y="425" width="369" height="422" rx="28" fill="url(#paper)" stroke="#4c7690" stroke-width="4"/>
+</g>
+
+<!-- headers -->
+<g font-family="Georgia,serif" font-weight="700">
+  <circle cx="78" cy="470" r="29" fill="#a43d31"/><text x="78" y="480" text-anchor="middle" font-size="27" fill="#fff">1</text><text x="120" y="480" font-size="29" fill="#75352d">BEFORE</text>
+  <circle cx="467" cy="470" r="29" fill="#8a6339"/><text x="467" y="480" text-anchor="middle" font-size="27" fill="#fff">2</text><text x="509" y="480" font-size="29" fill="#64482f">ROOT CAUSE</text>
+  <circle cx="856" cy="470" r="29" fill="#397259"/><text x="856" y="480" text-anchor="middle" font-size="27" fill="#fff">3</text><text x="898" y="480" font-size="29" fill="#315c48">FIX</text>
+  <circle cx="1245" cy="470" r="29" fill="#47758d"/><text x="1245" y="480" text-anchor="middle" font-size="27" fill="#fff">4</text><text x="1287" y="480" font-size="29" fill="#365a6e">RESULT</text>
+</g>
+
+<!-- panel 1 -->
+<g transform="translate(56,520)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#34302c">First SSH marker probe drops.</text>
+  <rect y="34" width="322" height="100" rx="14" fill="#28343e"/>
+  <text x="18" y="64" font-family="monospace" font-size="15" fill="#f4e7cb">ssh.exec(marker_probe)</text>
+  <text x="18" y="94" font-family="monospace" font-size="17" fill="#ef7a69">→ connection reset</text>
+  <text x="18" y="120" font-family="monospace" font-size="15" fill="#ef7a69">→ throws</text>
+  <path d="M161 145V183" stroke="#a43d31" stroke-width="6"/><polygon points="161,196 148,176 174,176" fill="#a43d31"/>
+  <rect y="205" width="322" height="100" rx="14" fill="#a43d31"/>
+  <text x="161" y="240" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">FALSE UPDATE VERDICT</text>
+  <text x="161" y="269" text-anchor="middle" font-family="monospace" font-size="15" fill="#ffe1ce">kind = update-in-progress</text>
+  <text x="161" y="294" text-anchor="middle" font-size="15" fill="#ffe1ce">boot stops before lock/spawn</text>
+</g>
+
+<!-- panel 2 -->
+<g transform="translate(445,520)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#34302c">One catch block collapsed two states.</text>
+  <g transform="translate(0,42)">
+    <rect width="322" height="70" rx="13" fill="#efe0ba" stroke="#806344" stroke-width="3"/>
+    <text x="16" y="29" font-family="monospace" font-size="15" fill="#4c4135">real marker verdict</text>
+    <text x="16" y="54" font-family="monospace" font-size="16" fill="#7a4f30">LIVE / UNCERTAIN</text>
+    <rect y="94" width="322" height="70" rx="13" fill="#efe0ba" stroke="#806344" stroke-width="3"/>
+    <text x="16" y="123" font-family="monospace" font-size="15" fill="#4c4135">transport uncertainty</text>
+    <text x="16" y="148" font-family="monospace" font-size="16" fill="#a43d31">reset / timeout / empty</text>
+    <path d="M161 173V211" stroke="#8a6339" stroke-width="6"/><polygon points="161,224 148,204 174,204" fill="#8a6339"/>
+    <text x="161" y="256" text-anchor="middle" font-size="17" font-weight="700" fill="#68492f">both became “update active”</text>
+  </g>
+</g>
+
+<!-- panel 3 -->
+<g transform="translate(834,520)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#34302c">Separate transport from marker truth.</text>
+  <rect y="36" width="322" height="86" rx="14" fill="#2d4a43"/>
+  <text x="16" y="65" font-family="monospace" font-size="15" fill="#f3e7c8">withRemoteTimeout(...)</text>
+  <text x="16" y="91" font-family="monospace" font-size="15" fill="#c4efcf">2 attempts · 500ms gap</text>
+  <g transform="translate(0,145)">
+    <circle cx="16" cy="14" r="12" fill="#3b815d"/><text x="16" y="20" text-anchor="middle" fill="#fff" font-size="18">✓</text>
+    <text x="43" y="19" font-size="16" fill="#35312d">reset → retry once</text>
+    <circle cx="16" cy="63" r="12" fill="#3b815d"/><text x="16" y="69" text-anchor="middle" fill="#fff" font-size="18">✓</text>
+    <text x="43" y="68" font-size="16" fill="#35312d">CLEAR → continue</text>
+    <circle cx="16" cy="112" r="12" fill="#a43d31"/><text x="16" y="118" text-anchor="middle" fill="#fff" font-size="18">!</text>
+    <text x="43" y="117" font-size="16" fill="#35312d">LIVE / UNCERTAIN → block</text>
+    <circle cx="16" cy="161" r="12" fill="#47758d"/><text x="16" y="167" text-anchor="middle" fill="#fff" font-size="18">→</text>
+    <text x="43" y="166" font-size="16" fill="#35312d">exhausted → transient error</text>
+    <circle cx="16" cy="210" r="12" fill="#8a6339"/><text x="16" y="216" text-anchor="middle" fill="#fff" font-size="18">×</text>
+    <text x="43" y="215" font-size="16" fill="#35312d">auth/host-key → no retry</text>
+  </g>
+</g>
+
+<!-- panel 4 -->
+<g transform="translate(1223,520)" font-family="Arial,sans-serif">
+  <text font-size="19" font-weight="700" fill="#34302c">The next safe step becomes reachable.</text>
+  <path d="M22 74 C82 20 146 128 210 70 S294 118 320 58" fill="none" stroke="#4c7690" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#f3d76f"><circle cx="22" cy="74" r="7"/><circle cx="97" cy="76" r="7"/><circle cx="178" cy="78" r="7"/><circle cx="258" cy="77" r="7"/><circle cx="320" cy="58" r="7"/></g>
+  <g transform="translate(0,130)">
+    <circle cx="17" cy="15" r="13" fill="#3b815d"/><text x="17" y="22" text-anchor="middle" fill="#fff" font-size="19">✓</text>
+    <text x="47" y="20" font-size="17" fill="#333">transient first failure self-heals</text>
+    <circle cx="17" cy="70" r="13" fill="#3b815d"/><text x="17" y="77" text-anchor="middle" fill="#fff" font-size="19">✓</text>
+    <text x="47" y="75" font-size="17" fill="#333">real updater remains protected</text>
+    <circle cx="17" cy="125" r="13" fill="#3b815d"/><text x="17" y="132" text-anchor="middle" fill="#fff" font-size="19">✓</text>
+    <text x="47" y="130" font-size="17" fill="#333">terminal SSH errors stay terminal</text>
+    <circle cx="17" cy="180" r="13" fill="#3b815d"/><text x="17" y="187" text-anchor="middle" fill="#fff" font-size="19">✓</text>
+    <text x="47" y="185" font-size="17" fill="#333">orphan reap remains backend-owned</text>
+  </g>
+  <rect x="0" y="335" width="322" height="52" rx="14" fill="#436f63"/>
+  <text x="161" y="368" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#fff3d7">same path · truthful verdicts</text>
+</g>
+
+<!-- arrows -->
+<g fill="#f0d88e">
+  <path d="M402 642 l20 -16 v10 h22 v12 h-22 v10 z"/>
+  <path d="M791 642 l20 -16 v10 h22 v12 h-22 v10 z"/>
+  <path d="M1180 642 l20 -16 v10 h22 v12 h-22 v10 z"/>
+</g>
+
+<text x="800" y="882" text-anchor="middle" font-family="Georgia,serif" font-size="19" fill="#f7ecd4">A dropped SSH probe is weather on the trail — not proof that an updater owns the road.</text>
+</svg>
